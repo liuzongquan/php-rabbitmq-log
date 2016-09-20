@@ -4,12 +4,7 @@
     "description": "A Logger wrapper for php-amqplib.",
     "keywords": ["rabbitmq", "Logger", "php"],
     "homepage": "https://github.com/liuzongquan/php-rabbitmq-log/",
-    "repositories": [
-        {
-            "url": "https://github.com/liuzongquan/php-rabbitmq-log.git",
-            "type": "git"
-        }
-    ],
+    
     "authors": [
         {
             "name": "liuzongquan",
@@ -19,7 +14,6 @@
     "require": {
         "php": ">=5.3.0",
         "php-amqplib/php-amqplib": "2.6.*",
-        "liuzongquan/php-rabbitmq-log": "*"
     },
     "autoload": {
         "psr-4": {
