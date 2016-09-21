@@ -7,16 +7,16 @@
  */
 
 return [
-    'log' => array([
+    'log' => array(
         'dir' => '/tmp',
         'base_name' => 'api',
         'postfix' => '.Y-m-d',
-    ]),
-    'rabbitmq' =>array([
+    ),
+    'rabbitmq' => array(
         'host' => 'localhost',
-        'port' => 15672,
+        'port' => 5672,
         'user' => 'guest',
         'password' => 'guest',
         'vhost' => '/',
-    ]),
+    ),
 ];

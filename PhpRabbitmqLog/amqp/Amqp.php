@@ -58,29 +58,35 @@ class Amqp
     /**
      * @var string
      */
-    public static $user;
+    public static $user = 'guest';
 
     /**
      * @var string
      */
-    public static $password;
+    public static $password = 'guest';
 
     /**
      * @var string
      */
     public static $vhost = '/';
 
+    public static $params;
+
     /**
      * @inheritdoc
      */
-    public function init()
+    public function __construct()
     {
-        parent::init();
-        self::$params = require_once(__DIR__ . "../config/params.php");
         if (empty(self::$user)) {
             throw new Exception("Parameter 'user' was not set for AMQP connection.");
         }
         if (empty(self::$ampqConnection)) {
+            self::$params = require __DIR__ . "/../config/params.php";
+            self::$host = self::$params['rabbitmq']['host'];
+            self::$port = self::$params['rabbitmq']['port'];
+            self::$user = self::$params['rabbitmq']['user'];
+            self::$password = self::$params['rabbitmq']['password'];
+            self::$vhost = self::$params['rabbitmq']['vhost'];
             self::$ampqConnection =new AMQPStreamConnection(
                 self::$host,
                 self::$port,
