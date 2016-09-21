@@ -53,24 +53,24 @@ class Logger
         }
     }
 
-    public function info($message, $category = "api")
+    public static function info($message, $category = "api")
     {
-        return $this->log($message, Logger::LEVEL_INFO, $category);
+        return (new Logger())->log($message, Logger::LEVEL_INFO, $category);
     }
 
-    public function trace($message, $category = "api")
+    public static function trace($message, $category = "api")
     {
-        return $this->log($message, Logger::LEVEL_TRACE, $category);
+        return (new Logger())->log($message, Logger::LEVEL_TRACE, $category);
     }
 
-    public function warning($message, $category = "api")
+    public static function warning($message, $category = "api")
     {
-        return $this->log($message, Logger::LEVEL_WARNING, $category);
+        return (new Logger())->log($message, Logger::LEVEL_WARNING, $category);
     }
 
-    public function error($message, $category = "api")
+    public static function error($message, $category = "api")
     {
-        return $this->log($message, Logger::LEVEL_ERROR, $category);
+        return (new Logger())->log($message, Logger::LEVEL_ERROR, $category);
     }
 
     /**
